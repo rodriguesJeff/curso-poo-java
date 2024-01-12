@@ -1,24 +1,16 @@
 public class Caneta {
-    public String cor;
-    public String modelo;
+    private String modelo;
     private float ponta;
-    protected int carga;
+
     private boolean tampada;
 
-    public void status() {
-        System.out.println("Modelo: " + this.modelo);
-        System.out.println("Uma caneta " + this.cor);
-        System.out.println("Esta tampada? " + this.tampada);
-        System.out.println("Ponta: " + this.ponta);
-        System.out.println("Carga: " + this.carga);
-    }
+    private String cor;
 
-    private void rabiscar() {
-        if (this.tampada) {
-            System.out.println("Erro! Nao posso rabiscar!");
-        } else {
-            System.out.println("Rabiscando!");
-        }
+    public Caneta(String m, String c, float p) {
+        this.cor = c;
+        this.ponta = p;
+        this.modelo = m;
+        this.tampar();
     }
 
     public void tampar() {
@@ -27,5 +19,27 @@ public class Caneta {
 
     public void destampar() {
         this.tampada = false;
+    }
+
+    public String getModelo() {
+        return this.modelo;
+    }
+
+    public void setModelo(String m) {
+        this.modelo = m;
+    }
+
+    public float getPonta() {
+        return this.ponta;
+    }
+
+    public void setPonta(float p) {
+        this.ponta = p;
+    }
+
+    public void status() {
+        System.out.println("Modelo: " + this.modelo);
+        System.out.println("Ponta: " + this.ponta);
+        System.out.println("A caneta esta tampada? " + this.tampada);
     }
 }
